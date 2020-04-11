@@ -1360,7 +1360,7 @@
  * See http://marlinfw.org/docs/features/lin_advance.html for full instructions.
  * Mention @Sebastianv650 on GitHub to alert the author of any issues.
  */
-#define LIN_ADVANCE
+// #define LIN_ADVANCE
 #if ENABLED(LIN_ADVANCE)
   //#define EXTRA_LIN_ADVANCE_K // Enable for second linear advance constants
   #define LIN_ADVANCE_K 0.8    // Unit: mm compression per 1mm/s extruder speed
@@ -1831,7 +1831,7 @@
     #define X_CURRENT       800        // (mA) RMS current. Multiply by 1.414 for peak current.
     #define X_CURRENT_HOME  X_CURRENT  // (mA) RMS current for sensorless homing
     #define X_MICROSTEPS     8    // 0..256
-    #define X_RSENSE          0.11
+    #define X_RSENSE         0.11
     #define X_CHAIN_POS      -1    // <=0 : Not chained. 1 : MCU MOSI connected. 2 : Next in chain, ...
   #endif
 
@@ -1839,7 +1839,7 @@
     #define X2_CURRENT      800
     #define X2_CURRENT_HOME X2_CURRENT
     #define X2_MICROSTEPS    8
-    #define X2_RSENSE         0.11
+    #define X2_RSENSE        0.11
     #define X2_CHAIN_POS     -1
   #endif
 
@@ -1847,7 +1847,7 @@
     #define Y_CURRENT       800
     #define Y_CURRENT_HOME  Y_CURRENT
     #define Y_MICROSTEPS     8
-    #define Y_RSENSE          0.11
+    #define Y_RSENSE         0.11
     #define Y_CHAIN_POS      -1
   #endif
 
@@ -1855,7 +1855,7 @@
     #define Y2_CURRENT      800
     #define Y2_CURRENT_HOME Y2_CURRENT
     #define Y2_MICROSTEPS    8
-    #define Y2_RSENSE         0.11
+    #define Y2_RSENSE        0.11
     #define Y2_CHAIN_POS     -1
   #endif
 
@@ -1863,7 +1863,7 @@
     #define Z_CURRENT       800
     #define Z_CURRENT_HOME  Z_CURRENT
     #define Z_MICROSTEPS     8
-    #define Z_RSENSE          0.11
+    #define Z_RSENSE         0.11
     #define Z_CHAIN_POS      -1
   #endif
 
@@ -1871,7 +1871,7 @@
     #define Z2_CURRENT      800
     #define Z2_CURRENT_HOME Z2_CURRENT
     #define Z2_MICROSTEPS    8
-    #define Z2_RSENSE         0.11
+    #define Z2_RSENSE        0.11
     #define Z2_CHAIN_POS     -1
   #endif
 
@@ -1879,14 +1879,14 @@
     #define Z3_CURRENT      800
     #define Z3_CURRENT_HOME Z3_CURRENT
     #define Z3_MICROSTEPS    8
-    #define Z3_RSENSE         0.11
+    #define Z3_RSENSE        0.11
     #define Z3_CHAIN_POS     -1
   #endif
 
   #if AXIS_IS_TMC(E0)
     #define E0_CURRENT      800
-    #define E0_MICROSTEPS    32
-    #define E0_RSENSE         0.11
+    #define E0_MICROSTEPS    8
+    #define E0_RSENSE        0.11
     #define E0_CHAIN_POS     -1
   #endif
 
@@ -2044,9 +2044,9 @@
   #define X2_HYBRID_THRESHOLD    100
   #define Y_HYBRID_THRESHOLD     100
   #define Y2_HYBRID_THRESHOLD    100
-  #define Z_HYBRID_THRESHOLD       3
-  #define Z2_HYBRID_THRESHOLD      3
-  #define Z3_HYBRID_THRESHOLD      3
+  #define Z_HYBRID_THRESHOLD      10
+  #define Z2_HYBRID_THRESHOLD     10
+  #define Z3_HYBRID_THRESHOLD     10
   #define E0_HYBRID_THRESHOLD     30
   #define E1_HYBRID_THRESHOLD     30
   #define E2_HYBRID_THRESHOLD     30
@@ -2104,7 +2104,7 @@
    * Beta feature!
    * Create a 50/50 square wave step pulse optimal for stepper drivers.
    */
-  #define SQUARE_WAVE_STEPPING
+  // #define SQUARE_WAVE_STEPPING
 
   /**
    * Enable M122 debugging command for TMC stepper drivers.
