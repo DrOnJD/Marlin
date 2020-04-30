@@ -37,10 +37,6 @@
   #define SERVO0_PIN       P2_00
 #endif
 
-#ifndef PS_ON_PIN
-  #define PS_ON_PIN       P2_00
-#endif
-
 //
 // Limit Switches
 //
