@@ -26,8 +26,8 @@
 //
 // Trinamic Stallguard pins
 //
-#define X_DIAG_PIN                         P1_27  // X-
-#define Y_DIAG_PIN                         P1_29  // Y-
+#define X_DIAG_PIN                         P1_29  // X-
+#define Y_DIAG_PIN                         P1_27  // Y-
 #define Z_DIAG_PIN                         P1_25  // Z-
 #define E0_DIAG_PIN                        P1_28  // X+
 #define E1_DIAG_PIN                        P1_26  // Y+
@@ -43,8 +43,8 @@
     #define X_MIN_PIN                      P1_28  // X+
   #endif
 #else
-  #define X_MIN_PIN                        P1_28  // X-
-  #define X_MAX_PIN                        P1_29  // X+
+  #define X_MIN_PIN                        P1_29  // X-
+  #define X_MAX_PIN                        P1_28  // X+
 #endif
 
 #ifdef Y_STALL_SENSITIVITY
@@ -81,7 +81,7 @@
 #endif
 
 #ifndef PS_ON_PIN
-  #define PS_ON_PIN                        P2_00
+  #define PS_ON_PIN                        P1_29 // PS_ON_PIN on X_MIN_PIN
 #endif
 
 //
