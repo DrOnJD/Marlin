@@ -2142,7 +2142,7 @@
     #define Z_CURRENT       800
     #define Z_CURRENT_HOME  Z_CURRENT
     #define Z_MICROSTEPS     2
-    #define Z_RSENSE         0.11
+    #define Z_RSENSE         0.075
     #define Z_CHAIN_POS      -1
   #endif
 
@@ -2173,7 +2173,7 @@
   #if AXIS_IS_TMC(E0)
     #define E0_CURRENT      800
     #define E0_MICROSTEPS    8
-    #define E0_RSENSE        0.11
+    #define E0_RSENSE        0.075
     #define E0_CHAIN_POS     -1
   #endif
 
