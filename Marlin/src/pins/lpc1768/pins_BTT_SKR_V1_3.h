@@ -81,7 +81,7 @@
 #endif
 
 #ifndef PS_ON_PIN
-  #define PS_ON_PIN                        P1_29 // PS_ON_PIN on X_MIN_PIN
+  #define PS_ON_PIN                        P2_00
 #endif
 
 //
