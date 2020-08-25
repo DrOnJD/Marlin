@@ -16,7 +16,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
 #pragma once
@@ -29,7 +29,9 @@
   #error "Oops! Select an STM32 board in your IDE."
 #endif
 
-#define BOARD_INFO_NAME "Malyan M200"
+#ifndef BOARD_INFO_NAME
+  #define BOARD_INFO_NAME "Malyan M200"
+#endif
 
 // Assume Flash EEPROM
 #if NO_EEPROM_SELECTED
