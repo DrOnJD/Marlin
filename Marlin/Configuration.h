@@ -736,23 +736,27 @@
  */
 //#define DISTINCT_E_FACTORS
 
-#define MM_PER_CYCLE 2
-#define STEPS_PRE_CYCLE 200
-#define XY_MICROSTEPS 20
+#define MM_PER_CYCLE 1
+#define STEPS_PER_CYCLE 200
+#define TOOTHS 20
+#define BELT_STEP 2
+#define X_STEPS_PER_UNIT (X_MICROSTEPS * STEPS_PER_CYCLE) / (TOOTHS * BELT_STEP)
+#define Y_STEPS_PER_UNIT (Y_MICROSTEPS * STEPS_PER_CYCLE) / (TOOTHS * BELT_STEP)
+#define Z_STEPS_PER_UNIT STEPS_PER_CYCLE * Z_MICROSTEPS / MM_PER_CYCLE
 
 /**
  * Default Axis Steps Per Unit (steps/mm)
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 5 * XY_MICROSTEPS, 5 * XY_MICROSTEPS, STEPS_PRE_CYCLE * 16 / MM_PER_CYCLE, 170 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {X_STEPS_PER_UNIT , Y_STEPS_PER_UNIT, Z_STEPS_PER_UNIT, 90 }
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 150, 150, 8, 25 }
+#define DEFAULT_MAX_FEEDRATE          { 150, 150, 10, 25 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
