@@ -503,9 +503,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp 24.18
-    #define DEFAULT_Ki 2.83
-    #define DEFAULT_Kd 51.71
+    #define DEFAULT_Kp 24.96
+    #define DEFAULT_Ki 2.95
+    #define DEFAULT_Kd 52.87
   #endif
 #endif // PIDTEMP
 
@@ -753,7 +753,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {X_STEPS_PER_UNIT , Y_STEPS_PER_UNIT, Z_STEPS_PER_UNIT, 90 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { X_STEPS_PER_UNIT, Y_STEPS_PER_UNIT, Z_STEPS_PER_UNIT, 90 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1405,7 +1405,7 @@
 #endif
 
 // Homing speeds (mm/min)
-#define HOMING_FEEDRATE_XY (50*60)
+#define HOMING_FEEDRATE_XY (80*60)
 #define HOMING_FEEDRATE_Z  (10*60)
 
 // Validate that endstops are triggered on homing moves
