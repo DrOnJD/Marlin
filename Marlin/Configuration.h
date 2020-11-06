@@ -635,8 +635,8 @@
 #define ENDSTOPPULLUPS
 #if DISABLED(ENDSTOPPULLUPS)
   // Disable ENDSTOPPULLUPS to set pullups individually
-  //#define ENDSTOPPULLUP_XMAX
-  //#define ENDSTOPPULLUP_YMAX
+  // #define ENDSTOPPULLUP_XMAX
+  // #define ENDSTOPPULLUP_YMAX
   //#define ENDSTOPPULLUP_ZMAX
   //#define ENDSTOPPULLUP_XMIN
   //#define ENDSTOPPULLUP_YMIN
@@ -715,10 +715,10 @@
  *
  * :[2,3,4,5,6,7]
  */
-//#define ENDSTOP_NOISE_THRESHOLD 2
+#define ENDSTOP_NOISE_THRESHOLD 5
 
 // Check for stuck or disconnected endstops during homing moves.
-//#define DETECT_BROKEN_ENDSTOP
+#define DETECT_BROKEN_ENDSTOP
 
 //=============================================================================
 //============================== Movement Settings ============================
@@ -746,7 +746,7 @@
 #define BELT_STEP 2
 #define X_STEPS_PER_UNIT (X_MICROSTEPS * STEPS_PER_CYCLE) / (TOOTHS * BELT_STEP)
 #define Y_STEPS_PER_UNIT (Y_MICROSTEPS * STEPS_PER_CYCLE) / (TOOTHS * BELT_STEP)
-#define Z_STEPS_PER_UNIT STEPS_PER_CYCLE * (Z_MICROSTEPS || 1) / MM_PER_CYCLE
+#define Z_STEPS_PER_UNIT STEPS_PER_CYCLE * (Z_MICROSTEPS) / MM_PER_CYCLE
 
 /**
  * Default Axis Steps Per Unit (steps/mm)
@@ -800,7 +800,7 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-#define CLASSIC_JERK
+// #define CLASSIC_JERK
 #if ENABLED(CLASSIC_JERK)
   #define DEFAULT_XJERK 10.0
   #define DEFAULT_YJERK 10.0
