@@ -419,7 +419,7 @@
  *   998 : Dummy Table that ALWAYS reads 25°C or the temperature defined below.
  *   999 : Dummy Table that ALWAYS reads 100°C or the temperature defined below.
  */
-#define TEMP_SENSOR_0 1
+#define TEMP_SENSOR_0 66
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
@@ -503,9 +503,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp 24.96
-    #define DEFAULT_Ki 2.95
-    #define DEFAULT_Kd 52.87
+    #define DEFAULT_Kp 16.26
+    #define DEFAULT_Ki 1.01
+    #define DEFAULT_Kd 65.43
   #endif
 #endif // PIDTEMP
 
@@ -635,8 +635,8 @@
 #define ENDSTOPPULLUPS
 #if DISABLED(ENDSTOPPULLUPS)
   // Disable ENDSTOPPULLUPS to set pullups individually
-  // #define ENDSTOPPULLUP_XMAX
-  // #define ENDSTOPPULLUP_YMAX
+  //#define ENDSTOPPULLUP_XMAX
+  //#define ENDSTOPPULLUP_YMAX
   //#define ENDSTOPPULLUP_ZMAX
   //#define ENDSTOPPULLUP_XMIN
   //#define ENDSTOPPULLUP_YMIN
@@ -743,7 +743,7 @@
 //#define DISTINCT_E_FACTORS
 
 #define MM_PER_CYCLE 1
-#define STEPS_PER_CYCLE 200
+#define STEPS_PER_CYCLE 400
 #define TOOTHS 20
 #define BELT_STEP 2
 #define X_STEPS_PER_UNIT (X_MICROSTEPS * STEPS_PER_CYCLE) / (TOOTHS * BELT_STEP)
@@ -802,7 +802,7 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-// #define CLASSIC_JERK
+//#define CLASSIC_JERK
 #if ENABLED(CLASSIC_JERK)
   #define DEFAULT_XJERK 10.0
   #define DEFAULT_YJERK 10.0
