@@ -742,7 +742,7 @@
  */
 //#define DISTINCT_E_FACTORS
 
-#define MM_PER_CYCLE 1
+#define MM_PER_CYCLE 2
 #define STEPS_PER_CYCLE 400
 #define TOOTHS 20
 #define BELT_STEP 2
@@ -1102,7 +1102,7 @@
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
 #define INVERT_X_DIR true
 #define INVERT_Y_DIR true
-#define INVERT_Z_DIR false
+#define INVERT_Z_DIR true
 
 // @section extruder
 
