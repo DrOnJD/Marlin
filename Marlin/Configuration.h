@@ -481,7 +481,7 @@
 
 #if ENABLED(PIDTEMP)
   //#define PID_EDIT_MENU         // Add PID editing to the "Advanced Settings" menu. (~700 bytes of PROGMEM)
-  //#define PID_AUTOTUNE_MENU     // Add PID auto-tuning to the "Advanced Settings" menu. (~250 bytes of PROGMEM)
+  #define PID_AUTOTUNE_MENU     // Add PID auto-tuning to the "Advanced Settings" menu. (~250 bytes of PROGMEM)
   //#define PID_PARAMS_PER_HOTEND // Uses separate PID parameters for each extruder (useful for mismatched extruders)
                                   // Set/get with gcode: M301 E[extruder number, 0-2]
 
@@ -709,7 +709,7 @@
 //#define ENDSTOP_NOISE_THRESHOLD 2
 
 // Check for stuck or disconnected endstops during homing moves.
-//#define DETECT_BROKEN_ENDSTOP
+#define DETECT_BROKEN_ENDSTOP
 
 //=============================================================================
 //============================== Movement Settings ============================
@@ -732,14 +732,19 @@
 //#define DISTINCT_E_FACTORS
 
 #define MM_PER_CYCLE 2
-#define STEPS_PRE_CYCLE 200
+#define STEPS_PER_CYCLE 200
+#define TOOTHS 20
+#define BELT_STEP 2
+#define X_STEPS_PER_UNIT (X_MICROSTEPS * STEPS_PER_CYCLE) / (TOOTHS * BELT_STEP)
+#define Y_STEPS_PER_UNIT (Y_MICROSTEPS * STEPS_PER_CYCLE) / (TOOTHS * BELT_STEP)
+#define Z_STEPS_PER_UNIT STEPS_PER_CYCLE * (Z_MICROSTEPS) / MM_PER_CYCLE
 
 /**
  * Default Axis Steps Per Unit (steps/mm)
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 5 * X_MICROSTEPS, 5 * Y_MICROSTEPS, STEPS_PRE_CYCLE * Z_MICROSTEPS / MM_PER_CYCLE, 170 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { X_STEPS_PER_UNIT, Y_STEPS_PER_UNIT, Z_STEPS_PER_UNIT, 170 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -993,13 +998,13 @@
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 30
+#define PROBING_MARGIN 10
 
 // X and Y axis travel speed (mm/min) between probes
-#define XY_PROBE_SPEED (100*60)
+#define XY_PROBE_SPEED HOMING_FEEDRATE_XY
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
-#define Z_PROBE_SPEED_FAST (4*60)
+#define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
 
 // Feedrate (mm/min) for the "accurate" probe of each point
 #define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 2)
@@ -1057,8 +1062,8 @@
  * Example: `M851 Z-5` with a CLEARANCE of 4  =>  9mm from bed to nozzle.
  *     But: `M851 Z+1` with a CLEARANCE of 2  =>  2mm from bed to nozzle.
  */
-#define Z_CLEARANCE_DEPLOY_PROBE    5 // Z Clearance for Deploy/Stow
-// #define Z_CLEARANCE_BETWEEN_PROBES  5 // Z Clearance between probe points
+#define Z_CLEARANCE_DEPLOY_PROBE    10 // Z Clearance for Deploy/Stow
+#define Z_CLEARANCE_BETWEEN_PROBES  5 // Z Clearance between probe points
 #define Z_CLEARANCE_MULTI_PROBE     5 // Z Clearance between multiple probes
 #define Z_AFTER_PROBING             10 // Z position after probing is done
 
