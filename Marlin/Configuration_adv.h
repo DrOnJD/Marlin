@@ -2371,7 +2371,7 @@
   #if AXIS_IS_TMC(Z)
     #define Z_CURRENT       800
     #define Z_CURRENT_HOME  Z_CURRENT
-    #define Z_MICROSTEPS     4
+    #define Z_MICROSTEPS     2
     #define Z_RSENSE         0.075
     #define Z_CHAIN_POS      -1
     //#define Z_INTERPOLATE  true

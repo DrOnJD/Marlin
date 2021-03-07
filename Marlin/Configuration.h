@@ -409,7 +409,7 @@
  *   998 : Dummy Table that ALWAYS reads 25°C or the temperature defined below.
  *   999 : Dummy Table that ALWAYS reads 100°C or the temperature defined below.
  */
-#define TEMP_SENSOR_0 1
+#define TEMP_SENSOR_0 66
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
@@ -1131,12 +1131,12 @@
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
 #define INVERT_X_DIR true
 #define INVERT_Y_DIR true
-#define INVERT_Z_DIR false
+#define INVERT_Z_DIR true
 
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR false
+#define INVERT_E0_DIR true
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
@@ -1174,7 +1174,7 @@
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 159
+#define Z_MAX_POS 171.7
 
 /**
  * Software Endstops
@@ -1635,6 +1635,16 @@
 #define PREHEAT_2_TEMP_BED    100
 #define PREHEAT_2_FAN_SPEED     0 // Value from 0 to 255
 
+#define PREHEAT_3_LABEL       "ABS GF12"
+#define PREHEAT_3_TEMP_HOTEND 255
+#define PREHEAT_3_TEMP_BED    100
+#define PREHEAT_3_FAN_SPEED     0 // Value from 0 to 255
+
+#define PREHEAT_4_LABEL       "ABS/PA GF8"
+#define PREHEAT_4_TEMP_HOTEND 275
+#define PREHEAT_4_TEMP_BED    110
+#define PREHEAT_4_FAN_SPEED     0 // Value from 0 to 255
+
 /**
  * Nozzle Park
  *
@@ -1653,9 +1663,9 @@
   #define NOZZLE_PARK_POINT { (X_MAX_POS), (Y_MAX_POS), 20 }
   //#define NOZZLE_PARK_X_ONLY          // X move only is required to park
   //#define NOZZLE_PARK_Y_ONLY          // Y move only is required to park
-  #define NOZZLE_PARK_Z_RAISE_MIN   2   // (mm) Always raise Z by at least this distance
+  #define NOZZLE_PARK_Z_RAISE_MIN   5   // (mm) Always raise Z by at least this distance
   #define NOZZLE_PARK_XY_FEEDRATE  60   // (mm/s) X and Y axes feedrate (also used for delta Z axis)
-  #define NOZZLE_PARK_Z_FEEDRATE    3   // (mm/s) Z axis feedrate (not used for delta printers)
+  #define NOZZLE_PARK_Z_FEEDRATE   10   // (mm/s) Z axis feedrate (not used for delta printers)
 #endif
 
 /**
