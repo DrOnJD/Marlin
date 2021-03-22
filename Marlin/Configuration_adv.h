@@ -145,7 +145,7 @@
   //#define HEATER_CHAMBER_PIN       44   // Chamber heater on/off pin
   //#define HEATER_CHAMBER_INVERTING false
 
-  //#define CHAMBER_FAN               // Enable a fan on the chamber
+  #define CHAMBER_FAN               // Enable a fan on the chamber
   #if ENABLED(CHAMBER_FAN)
     #define CHAMBER_FAN_MODE 2        // Fan control mode: 0=Static; 1=Linear increase when temp is higher than target; 2=V-shaped curve.
     #if CHAMBER_FAN_MODE == 0
@@ -2371,7 +2371,7 @@
   #if AXIS_IS_TMC(Z)
     #define Z_CURRENT       800
     #define Z_CURRENT_HOME  Z_CURRENT
-    #define Z_MICROSTEPS     2
+    #define Z_MICROSTEPS     16
     #define Z_RSENSE         0.075
     #define Z_CHAIN_POS      -1
     //#define Z_INTERPOLATE  true

@@ -1174,7 +1174,7 @@
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 171.7
+#define Z_MAX_POS 159
 
 /**
  * Software Endstops
@@ -1516,7 +1516,7 @@
 
 // Homing speeds (mm/min)
 #define HOMING_FEEDRATE_XY (80*60)
-#define HOMING_FEEDRATE_Z  (10*60)
+#define HOMING_FEEDRATE_Z  (20*60)
 #define HOMING_FEEDRATE_MM_M { HOMING_FEEDRATE_XY, HOMING_FEEDRATE_XY, HOMING_FEEDRATE_Z }
 
 // Validate that endstops are triggered on homing moves
@@ -1665,7 +1665,7 @@
   //#define NOZZLE_PARK_Y_ONLY          // Y move only is required to park
   #define NOZZLE_PARK_Z_RAISE_MIN   5   // (mm) Always raise Z by at least this distance
   #define NOZZLE_PARK_XY_FEEDRATE  60   // (mm/s) X and Y axes feedrate (also used for delta Z axis)
-  #define NOZZLE_PARK_Z_FEEDRATE   10   // (mm/s) Z axis feedrate (not used for delta printers)
+  #define NOZZLE_PARK_Z_FEEDRATE   20   // (mm/s) Z axis feedrate (not used for delta printers)
 #endif
 
 /**
